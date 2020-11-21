@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
 
     for (i = 0; i < 16; i++) {
         for (j = 0; j < 8; j++) {
-            printf("%d", *(disk + 1024 + (bg->bg_block_bitmap)*1024 + i)>>j & 1);
+            printf("%d", *(disk + 1024 + (bg->bg_block_bitmap - 1)*1024 + i)>>j & 1);
         }
         printf(" ");
     }
