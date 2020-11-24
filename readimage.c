@@ -51,6 +51,7 @@ int main(int argc, char **argv) {
     struct ext2_super_block *sb = (struct ext2_super_block *)(disk + 1024);
     printf("Inodes: %d\n", sb->s_inodes_count);
     printf("Blocks: %d\n", sb->s_blocks_count);
+	printf("s_log_block_size: %d\n", sb->s_log_block_size);
     printf("Block group:\n");
     // get the descriptor table in the second block
     struct ext2_group_desc *db = (struct ext2_group_desc*) (disk + EXT2_BLOCK_SIZE*2);
@@ -60,6 +61,7 @@ int main(int argc, char **argv) {
     printf("    free blocks: %d\n", db->bg_free_blocks_count);
     printf("    free inodes: %d\n", db->bg_free_inodes_count);
     printf("    used_dirs: %d\n", db->bg_used_dirs_count);
+	
 
     // BITMAPS --------------------------------------------------------------
 
