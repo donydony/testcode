@@ -43,6 +43,7 @@ int main(int argc, char **argv) {
 
     int counter;
     char* p = strdup(argv[1]);
+    char* token;
 
     while (token = strtok_r(p, "/", &p)) {
         counter++;
